@@ -1,0 +1,11 @@
+[window]
+dimensions = { lines = 30, columns = 110 }
+opacity = 0.9
+
+[font]
+normal = { family = "CommitMono Nerd Font Mono" }
+
+[keyboard]
+bindings = [
+  { key = "N", mods = "Control|Alt", action = "SpawnNewInstance" },
+]

@@ -1,0 +1,16 @@
+[[language]]
+name = "rust"
+indent = { tab-width = 2, unit = "  " }
+diagnostic-severity = "hint"
+
+[[language]]
+name = "typescript"
+formatter = { command = "biome", args = ["format", "--stdin-file-path", "{input}"] }
+
+[[language]]
+name = "javascript"
+formatter = { command = "biome", args = ["format", "--stdin-file-path", "{input}"] }
+
+[languages.language-server.biome]
+command = "biome"
+args = ["lsp-proxy"]

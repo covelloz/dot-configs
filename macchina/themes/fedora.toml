@@ -1,0 +1,5 @@
+separator_color = "White"
+
+[custom_ascii]
+path = "~/.config/macchina/themes/ascii/fedora_logo_ascii.txt"
+color = "Blue"

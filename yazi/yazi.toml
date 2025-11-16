@@ -1,0 +1,7 @@
+[mgr]
+ratio=[0,2,0]
+
+[opener]
+edit = [
+  { run = 'hx "$@"', block = true, for = "unix" }
+]

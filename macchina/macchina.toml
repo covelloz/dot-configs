@@ -1,0 +1,17 @@
+theme = "fedora"
+show = [
+    "Host",
+    "Kernel",
+    "Distribution",
+    "DesktopEnvironment",
+    "WindowManager",
+    "Shell",
+    "Packages",
+    "LocalIP",
+    "Processor",
+    "ProcessorLoad",
+    "Memory",
+    "GPU",
+    "DiskSpace",
+    "Uptime"
+]

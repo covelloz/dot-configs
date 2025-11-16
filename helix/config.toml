@@ -1,0 +1,38 @@
+theme = "carbonfox"
+
+[editor]
+bufferline = "always"
+auto-pairs = false
+auto-format = false
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.file-picker]
+hidden = false
+
+[editor.auto-save]
+focus-lost = true
+
+[editor.indent-guides]
+render = true
+
+[editor.whitespace.render]
+space = "none"
+tab = "none"
+
+[editor.whitespace.characters]
+space = "·"
+tab = "→"
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
+
+[editor.lsp]
+display-progress-messages = true
+display-inlay-hints = true
+
+[keys.normal]
+C-y = ":sh zellij run -d right -- bash ~/.config/helix/yazi-picker.sh"
+C-j = "scroll_down"
+C-k = "scroll_up"
