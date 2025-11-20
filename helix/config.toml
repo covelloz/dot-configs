@@ -30,7 +30,7 @@ cursor-line = "hint"
 
 [editor.lsp]
 display-progress-messages = true
-display-inlay-hints = true
+display-inlay-hints = false
 
 [keys.normal]
 C-y = ":sh zellij run -d right -- bash ~/.config/helix/yazi-picker.sh"
