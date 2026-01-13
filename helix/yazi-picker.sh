@@ -3,7 +3,7 @@
 zellij action move-pane left
 
 while true; do
-	paths=$(yazi --chooser-file=/dev/stdout | while read -r; do printf "%q " "$REPLY"; done)
+	paths=$(yazi --chooser-file=/dev/stdout | sed 's/^/"/;s/$/"/' | tr '\n' ' ')
 
 	if [[ -n "$paths" ]]; then
 		zellij action focus-next-pane
