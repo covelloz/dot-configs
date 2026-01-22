@@ -1,4 +1,6 @@
 (
+    open_help: Some(( code: F(1), modifiers: "")),
+
     move_left: Some(( code: Char('h'), modifiers: "")),
     move_right: Some(( code: Char('l'), modifiers: "")),
     move_up: Some(( code: Char('k'), modifiers: "")),
@@ -6,8 +8,6 @@
 
     home: Some(( code: Char('g'), modifiers: "")),
     end: Some(( code: Char('G'), modifiers: "SHIFT")),
-    page_up: Some(( code: Char('u'), modifiers: "CONTROL")
-    page_down: Some(( code: Char('d'), modifiers: "CONTROL")
-    shift_up: Some(( code: Char('k'), modifiers: "CONTROL")),
-    shift_down: Some(( code: Char('j'), modifiers: "CONTROL")),
+    page_up: Some(( code: Char('u'), modifiers: "CONTROL")),
+    page_down: Some(( code: Char('d'), modifiers: "CONTROL")),
 )
