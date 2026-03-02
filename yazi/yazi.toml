@@ -1,5 +1,6 @@
 [mgr]
 ratio=[0,2,0]
+show_hidden = true
 
 [opener]
 edit = [
