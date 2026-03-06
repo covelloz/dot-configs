@@ -32,8 +32,22 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-# Rust crates
+# Rust
+. "$HOME/.cargo/env"
 export PATH="$PATH:$HOME/.cargo/bin"
+
+# PHP
+export PATH="/home/covelloz/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/covelloz/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
+# Android toolkit
+export PATH="$HOME/Utils/platform-tools:$PATH"
+
+# Podman for Docker containers
+export DOCKER_HOST=unix:///run/host/run/user/$(id -u)/podman/podman.sock
+
+# git
+ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
 
 # If NOT in a Toolbox container
 if [ -z "$TOOLBOX_PATH" ]; then
