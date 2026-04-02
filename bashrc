@@ -33,12 +33,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Rust
-. "$HOME/.cargo/env"
 export PATH="$PATH:$HOME/.cargo/bin"
-
-# PHP
-export PATH="/home/covelloz/.config/herd-lite/bin:$PATH"
-export PHP_INI_SCAN_DIR="/home/covelloz/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+export HELIX_RUNTIME="~/Apps/helix/runtime"
 
 # Android toolkit
 export PATH="$HOME/Utils/platform-tools:$PATH"
@@ -49,11 +45,9 @@ export DOCKER_HOST=unix:///run/host/run/user/$(id -u)/podman/podman.sock
 # git
 ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
 
-# If NOT in a Toolbox container
-if [ -z "$TOOLBOX_PATH" ]; then
-    # Add aliases for Flatpaks
-    alias hx='flatpak run com.helix_editor.Helix'
-fi
+# aliases
+alias toolbox-info="cat /run/.containerenv && echo"
 
 # Display system information
 macchina
+
