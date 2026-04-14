@@ -6,7 +6,9 @@ zellij action move-pane left
 project_root="$PWD"
 last_dir_file="${XDG_CACHE_HOME:-$HOME/.cache}/yazi/lastdir"
 cwd_file=$(mktemp)
-trap 'rm -f "$cwd_file"' EXIT
+
+# cache cleanup when script fully exits
+trap 'rm -f "$cwd_file"; rm -f "$last_dir_file"' EXIT
 
 while true; do
 	# checks lastdir cache & resets if pwd changes
