@@ -45,9 +45,15 @@ export DOCKER_HOST=unix:///run/host/run/user/$(id -u)/podman/podman.sock
 # git
 ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
 
-# aliases
+## aliases & functions
+# toolbox
 alias toolbox-info="cat /run/.containerenv && echo"
+# btrfs
+alias ssdbak-snap-list="sudo btrfs subvolume list /run/media/$USER/SSD_BAK"
+alias ssdbak-snap-take="sudo btrfs subvolume snapshot /run/media/$USER/SSD_BAK /run/media/$USER/SSD_BAK/@snapshots/snapshot-$(date +%Y-%m-%d)"
+ssdbak-snap-del() {
+    sudo btrfs subvolume delete "/run/media/$USER/SSD_BAK/@snapshots/$1"
+}
 
 # Display system information
 macchina
-
