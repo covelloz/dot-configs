@@ -24,8 +24,13 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-# PS1 color change to blue
-PS1='\[\e[0;34m\]\u@\h:\w\[\e[0m\]\[\e[0;37m\]\$\[\e[0m\] '
+# PS1
+_CLR_PURPLE="\[\e[0;35m\]"
+_CLR_BLUE="\[\e[0;34m\]"
+_CLR_WHITE="\[\e[0;37m\]"
+_CLR_RESET="\[\e[0m\]"
+_PROMPT_CHAR='\$'
+PS1="${_CLR_PURPLE}\`is_toolbox\`${_CLR_BLUE}\u@\h:\w${_CLR_WHITE}${_PROMPT_CHAR}${_CLR_RESET} "
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
@@ -47,7 +52,13 @@ ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
 
 ## aliases & functions
 # toolbox
-alias toolbox-info="cat /run/.containerenv && echo"
+function is_toolbox() {
+    if [ -f "/run/.toolboxenv" ]
+    then
+        TOOLBOX_NAME=$(cat /run/.containerenv | grep -oP "(?<=name=\")[^\";]+")
+        echo "[${TOOLBOX_NAME}]"
+    fi
+}
 # btrfs
 alias ssdbak-snap-list="sudo btrfs subvolume list /run/media/$USER/SSD_BAK"
 alias ssdbak-snap-take="sudo btrfs subvolume snapshot /run/media/$USER/SSD_BAK /run/media/$USER/SSD_BAK/@snapshots/snapshot-$(date +%Y-%m-%d)"
@@ -55,5 +66,5 @@ ssdbak-snap-del() {
     sudo btrfs subvolume delete "/run/media/$USER/SSD_BAK/@snapshots/$1"
 }
 
-# Display system information
+# display sysinfo
 macchina
