@@ -41,8 +41,11 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.cargo/bin"
 export HELIX_RUNTIME="~/Apps/helix/runtime"
 
+# Gradle
+export PATH="$PATH:$HOME/Utils/gradle-9.6.1/bin"
+
 # Android toolkit
-export PATH="$HOME/Utils/platform-tools:$PATH"
+export PATH="$PATH:$HOME/Utils/platform-tools"
 
 # Podman for Docker containers
 export DOCKER_HOST=unix:///run/host/run/user/$(id -u)/podman/podman.sock
