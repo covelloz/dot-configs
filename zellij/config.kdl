@@ -503,7 +503,10 @@ web_client {
 // Default: true
 // 
 // stacked_resize false
- 
+
+// Prefer original in-place rendering of stacked panes
+stacked_pane_list false
+
 // Whether to show tips on startup
 // Default: true
 // 
