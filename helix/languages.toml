@@ -4,6 +4,10 @@ indent = { tab-width = 2, unit = "  " }
 diagnostic-severity = "hint"
 
 [[language]]
+name = "kotlin"
+language-servers = ["kotlin-lsp"]
+
+[[language]]
 name = "typescript"
 formatter = { command = "biome", args = ["format", "--stdin-file-path", "%{buffer_name}"] }
 
