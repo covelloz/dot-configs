@@ -32,10 +32,8 @@ _CLR_RESET="\[\e[0m\]"
 _PROMPT_CHAR='\$'
 PS1="${_CLR_PURPLE}\`is_toolbox\`${_CLR_BLUE}\u@\h:\w${_CLR_WHITE}${_PROMPT_CHAR}${_CLR_RESET} "
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# mise
+eval "$(mise activate bash)"
 
 # Rust
 export PATH="$PATH:$HOME/.cargo/bin"
@@ -54,6 +52,8 @@ export DOCKER_HOST=unix:///run/host/run/user/$(id -u)/podman/podman.sock
 ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
 
 ## aliases & functions
+# helix
+alias hxg='hx $(git diff --name-only HEAD)'
 # toolbox
 function is_toolbox() {
     if [ -f "/run/.toolboxenv" ]
