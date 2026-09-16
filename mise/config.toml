@@ -4,3 +4,4 @@ auto_update = true
 [tools]
 gh = "latest"
 node = "24"
+pnpm = "latest"
